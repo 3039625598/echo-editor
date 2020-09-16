@@ -1,0 +1,195 @@
+{% load static %}
+
+<div style="display: flex;">
+    <textarea name="{{ widget.name }}"{% for name, value in widget.attrs.items %}{% if value is not False %} {{ name }}{% if value is not True %}="{{ value|stringformat:'s' }}"{% endif %}{% endif %}{% endfor %}>
+    {% if widget.value %}{{ widget.value }}{% endif %}</textarea>
+</div>
+
+<div style="height: 100px; margin-top: 30px;">
+    <style>
+        #err-msg {
+            -ms-overflow-style: none;  /* Internet Explorer 10+ */
+            scrollbar-width: none;  /* Firefox */
+        }
+        #err-msg::-webkit-scrollbar {
+            display: none;  /* Safari and Chrome */
+        }
+    </style>
+    <div id="err-msg" style="
+        overflow-x: hidden;
+        overflow-y: scroll;
+        height: 50px;
+        display: none;
+        background-color: #f0cbc9;
+        border-color: #a7342d;
+        color: #a7342d;
+        border-bottom-left-radius: 15px 255px;
+        border-bottom-right-radius: 225px 15px;
+        border-top-left-radius: 255px 15px;
+        border-top-right-radius: 15px 225px;
+        border: 2px solid #41403e;
+        margin-bottom: 20px;
+        padding: 15px;">
+        Alert-danger
+    </div>
+</div>
+
+<div style="display: flex; flex-direction: row; justify-content: space-between; box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important; border-radius: .25rem!important; ">
+
+    <div style="width: calc(414px * 0.8); height: calc(896px * 0.7); overflow: hidden;margin: 30px;">
+        <div style="position: relative; left: calc(414px * 0.8 * 0.5 - 414px * 0.5); top: calc(896px * 0.7 * 0.5 - 896px * 0.5); width: 414px; height: 896px; min-width: 414px; min-height: 896px; transform: matrix(1, 0, 0, 1, 0, 0);">
+            <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; -webkit-transform-origin: 50% 50%; transform-origin: 50% 50%; transform: scale(0.656701);">
+
+                <div style="top: -29px; left: -32px; width: 477px; height: 953px; background-image: url('https://modao.cc/mb-workspace/images/devices/iphone_xs_max.png');    position: absolute; pointer-events: none; background-size: cover; z-index: 4;">
+                </div>
+
+                <div style="width: 100%; height: 88px;">
+                    <div style="width: 100%; height: 44px!important; display: -webkit-box; display: flex; -webkit-box-pack: center; justify-content: center; height: 100%; padding: 0 14px;">
+                        <div id="now-time" style="-webkit-box-pack: center;justify-content: center;margin-right: auto;margin-left: 7px;width: 54px;font-size: 14px;font-weight: 600;    display: -webkit-box;display: flex;-webkit-box-align: center;align-items: center;height: 100%;"></div>
+                        <div style="margin-right: 0.4em; margin-left: auto;display: -webkit-box;display: flex;-webkit-box-align: center;align-items: center;height: 100%;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="17" height="12">
+                                <path d="M1.25 6.5h1a1 1 0 0 1 1 1V10a1 1 0 0 1-1 1h-1a1 1 0 0 1-1-1V7.5a1 1 0 0 1 1-1zM5.75 5h1a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1h-1a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1zm4.5-2h1a1 1 0 0 1 1 1v6a1 1 0 0 1-1 1h-1a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1zm4.5-2h1a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1h-1a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1z" fill-rule="evenodd"></path>
+                            </svg>
+                        </div>
+                        <div style="margin-right: 0.4em;    display: -webkit-box;display: flex;-webkit-box-align: center;align-items: center;height: 100%;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="12">
+                                <path d="M8.007 2.787a8.64 8.64 0 0 1 5.953 2.379c.12.118.314.116.433-.004l1.156-1.166a.322.322 0 0 0-.003-.456 10.897 10.897 0 0 0-15.08 0 .322.322 0 0 0-.003.456L1.62 5.162c.119.12.312.122.433.004a8.641 8.641 0 0 1 5.954-2.379zm0 3.796c1.217 0 2.391.452 3.294 1.27a.31.31 0 0 0 .433-.006l1.155-1.167a.322.322 0 0 0-.005-.459 7.16 7.16 0 0 0-9.752 0 .322.322 0 0 0-.005.46l1.155 1.166a.31.31 0 0 0 .433.006 4.907 4.907 0 0 1 3.292-1.27zm2.219 2.784a.314.314 0 0 0-.01-.457 3.422 3.422 0 0 0-4.42 0 .314.314 0 0 0-.009.457l1.998 2.016a.312.312 0 0 0 .443 0l1.998-2.016z" fill-rule="nonzero"></path>
+                            </svg>
+                        </div>
+                        <div style="margin-right: 2em; display: -webkit-box;display: flex;-webkit-box-align: center;align-items: center;height: 100%;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="12">
+                                <path d="M2.667 1.333C1.747 1.333 1 2.08 1 3v6c0 .92.746 1.667 1.667 1.667h16.666C20.253 10.667 21 9.92 21 9V3c0-.92-.746-1.667-1.667-1.667H2.667zm0-1h16.666A2.667 2.667 0 0 1 22 3v6a2.667 2.667 0 0 1-2.667 2.667H2.667A2.667 2.667 0 0 1 0 9V3A2.667 2.667 0 0 1 2.667.333z" opacity=".35"></path>
+                                <path d="M23 4v4a2.17 2.17 0 0 0 0-4" opacity=".4"></path>
+                                <rect x="2" y="2.333" width="18" height="7.333" rx="1.333"></rect>
+                            </svg>
+                        </div>
+                    </div>
+
+                    <div style="text-align: center; width: 414px; height: 44px; left: 0px; top: 44px; z-index: 13; border-color: rgba(255, 0, 0, 0); font-size: 18px; font-weight: normal; font-style: normal; opacity: 1;">
+                        <span>echo editor</span>
+                    </div>
+                </div>
+
+                <iframe id="echo-html" src="" style="width: 100%; height: calc(100% - 88px - 34px);" sandbox="allow-same-origin allow-top-navigation allow-forms allow-scripts"></iframe>
+
+                <div style="width: 100%; height: 34px;">
+                    <div style="width: 134px; height: 5px; left: 141px; top: 21px; z-index: 6; background-color: rgb(0, 0, 0); border: none; border-radius: 3px; font-size: 14px; padding: 0px; text-align: center; line-height: 20px; font-weight: normal; font-style: normal; opacity: 1; margin: auto; margin-top: 14px;">
+                        <div style="padding: 0px;">
+                            <p>&nbsp;</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <div style="width: 860px;">
+        <div>
+            <button type="button" onclick="big_text()">h1</button>
+        </div>
+        <div id="echo-editor" style="width: 800px; height: 600px; margin: 30px;"></div>
+    </div>
+
+</div>
+
+
+
+<!-- OR ANY OTHER AMD LOADER HERE INSTEAD OF loader.js -->
+<script src="{% static 'echo_editor/vs/loader.js' %}"></script>
+<script>
+    require.config({ paths: { vs: "{% static 'echo_editor/vs' %}" } });
+
+    var echo_editor;
+
+    var echo_html = document.getElementById('echo-html');
+    echo_html = echo_html.contentDocument || echo_html.contentWindow.document;
+    echo_html.children[0].children[0].innerHTML = `<style>::-webkit-scrollbar {display: none;}</style>`;
+    echo_html.children[0].children[1].innerHTML = `{% if widget.value %}{{ widget.value|safe }}{% endif %}`;
+
+    var support_node = [
+        'a', 'abbr', 'address', 'article', 'aside',
+        'b', 'bdi', 'bdo', 'big', 'blockquote',
+        'br', 'caption', 'center', 'cite', 'code',
+        'col', 'colgroup', 'dd', 'del', 'div',
+        'dl', 'dt', 'em', 'fieldset', 'font',
+        'footer', 'h1', 'h2', 'h3', 'h4',
+        'h5', 'h6', 'header', 'hr', 'i',
+        'img', 'ins', 'label', 'legend', 'li',
+        'mark', 'nav', 'ol', 'p', 'pre',
+        'q', 'rt', 'ruby', 's', 'section',
+        'small', 'span', 'strong', 'sub', 'sup',
+        'table', 'tbody', 'td', 'tfoot', 'th',
+        'thead', 'tr', 'tt', 'u', 'ul',
+    ]
+
+    function check_support_node() {
+        // 检查元素是否支持
+        let el = echo_html.children[0].children[1].getElementsByTagName('*');
+        let err_els = [];
+
+        for(var i=0; i<el.length;i++){
+            if (support_node.indexOf(el[i].tagName.toLowerCase()) == -1) {
+                err_els.push(el[i].tagName.toLowerCase())
+            }
+        }
+        if (err_els.length) {
+            document.getElementById('err-msg').style.display = 'block';
+            document.getElementById('err-msg').innerHTML = '错误：[' + err_els.join('、') + '] 节点不被小程序支持！<br>为了避免页面结构异常，请更正。'
+        } else {
+            document.getElementById('err-msg').innerHTML = '';
+            document.getElementById('err-msg').style.display = 'none';
+        }
+    }
+
+    setInterval(function(){
+        var t = new Date()
+		document.getElementById('now-time').innerHTML = t.getHours() + ':' + t.getMinutes()
+	}, 1000)
+
+    check_support_node();
+
+    require(['vs/editor/editor.main'], function () {
+        var editor = monaco.editor.create(
+            document.getElementById('echo-editor'),
+            {
+                value: `{% if widget.value %}{{ widget.value|safe }}{% endif %}`,
+                language: 'html',
+                theme:'vs-dark'
+            }
+        );
+
+        editor.onDidChangeModelContent(function (e) {
+            document.getElementById('{{ widget.attrs.id }}').value = editor.getValue();
+            echo_html.children[0].children[1].innerHTML = echo_editor.getValue();
+
+            check_support_node();
+            
+        });
+
+        editor.onDidChangeCursorPosition((e) => {
+            // console.log(editor.getPosition().lineNumber)
+            // console.log(editor.getPosition().column)
+        });
+
+        echo_editor = editor;
+    });
+
+    function big_text() {
+        var position = echo_editor.getPosition();
+        echo_editor.executeEdits('', [
+            {
+                range: {
+                    startLineNumber: position.lineNumber,
+                    startColumn: position.column,
+                    endLineNumber: position.lineNumber,
+                    endColumn: position.column
+                },
+                text: '<h1>替换内容</h1>'
+            } 
+        ]);
+
+        position.column += 4;
+        echo_editor.setPosition(position);
+    }
+</script>
